@@ -13,6 +13,7 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 server.use(cors());
 server.use('/', require('./routes'));
+server.use('/', express.static(__dirname + '/public/'));
 
 server.listen(config.server.port, config.server.ip, function() {
     console.log('Servidor corriendo en ' + config.server.ip + ':' + config.server.port);

@@ -5,7 +5,6 @@ exports.login = function(req, res) {
     //get
 exports.test = function(req, res) {
     //res.json(req.query);
-
     req.getConnection(function(err, connection) {
         //        connection.query("select * from users",
         connection.query("CALL PR_ADDUSER('Yeison', 'Gomez', 'yeigomez@email.com', '123456')",

@@ -1,0 +1,23 @@
+{
+  "name": "agendary",
+  "version": "1.0.0",
+  "description": "Proyecto final Administración de base de datos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StivenTC/Tori_backend.git"
+  },
+  "keywords": [
+    "agenda",
+    "notas"
+  ],
+  "author": "Stiven Tovar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StivenTC/Tori_backend/issues"
+  },
+  "homepage": "https://github.com/StivenTC/Tori_backend#readme"
+}

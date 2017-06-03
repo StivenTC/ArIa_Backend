@@ -3,7 +3,7 @@ exports.login = function(req, res) {
         //res.json(req.body);
         req.getConnection(function(err, connection) {
             //connection.query("select * from users",
-            connection.query("CALL PR_ADDUSER('" + req.body.name + "', '" + req.body.lastname + "', '" + req.body.email + "', '" + req.body.googleId + "')",
+            connection.query("CALL PR_ADDUSER('" + req.body.name + "', '" + req.body.lastname + "', '" + req.body.email + "', '" + req.body.password + "')",
                 function(err, userQuery) {
                     if (err) {
                         console.log("Error Consultando : %s ", err);

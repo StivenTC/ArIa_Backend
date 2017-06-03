@@ -1,6 +1,18 @@
 //post
 exports.login = function(req, res) {
-        res.json(req.body.user);
+        //res.json(req.body);
+        req.getConnection(function(err, connection) {
+            //connection.query("select * from users",
+            connection.query("CALL PR_ADDUSER('" + req.body.name + "', '" + req.body.lastname + "', '" + req.body.email + "', '" + req.body.googleId + "')",
+                function(err, userQuery) {
+                    if (err) {
+                        console.log("Error Consultando : %s ", err);
+                        return res.status(503).send({ status: 503, message: 'error de conexión con la base de datos' });
+                    } else {
+                        return res.status(401).send(userQuery);
+                    }
+                });
+        });
     }
     //get
 exports.test = function(req, res) {
@@ -13,7 +25,7 @@ exports.test = function(req, res) {
                     console.log("Error Consultando : %s ", err);
                     return res.status(503).send({ status: 503, message: 'error de conexion con la base de datos' });
                 } else {
-                    return res.send(401, userQuery);
+                    return res.status(401).send(userQuery);
                 }
             });
     });

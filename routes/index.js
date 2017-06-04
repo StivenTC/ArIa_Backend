@@ -10,6 +10,7 @@ fs.readdirSync(routes_path).forEach(function(file) {
 })
 
 router.post('/user/login', route.user.login);
+router.post('/user/signup', route.user.signup);
 router.get('/user/test', auth.ensureAuthenticated, route.user.test);
 
 //router.post('/predial', auth.ensureAuthenticated, route.predial.savePredial);

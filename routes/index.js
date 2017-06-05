@@ -11,6 +11,12 @@ fs.readdirSync(routes_path).forEach(function(file) {
 
 router.post('/user/login', route.user.login);
 router.post('/user/signup', route.user.signup);
-router.get('/user/test', auth.ensureAuthenticated, route.user.test);
+
+router.post('/user/addCategories', route.category.AddCategory);
+router.get('/user/getCategories', route.category.getCategories);
+
+router.post('/tag/add', route.tag.add);
+router.get('/tag/get', route.tag.get);
+
 
 //router.post('/predial', auth.ensureAuthenticated, route.predial.savePredial);

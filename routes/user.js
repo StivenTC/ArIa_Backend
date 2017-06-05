@@ -2,7 +2,7 @@
 exports.signup = function(req, res) {
     //res.json(req.body);
     req.getConnection(function(err, connection) {
-        //connection.query("select * from users",
+        //connection.query("select * from user",
         connection.query("CALL PR_ADDUSER('" + req.body.name + "', '" + req.body.lastname + "', '" + req.body.email + "', '" + req.body.password + "')",
             function(err, userQuery) {
                 console.log(userQuery);

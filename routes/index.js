@@ -12,6 +12,9 @@ fs.readdirSync(routes_path).forEach(function(file) {
 router.post('/user/login', route.user.login);
 router.post('/user/signup', route.user.signup);
 
+router.get('/user/getUsers', route.user.getUsers);
+
+
 router.post('/user/addCategories', route.category.AddCategory);
 router.get('/user/getCategories', route.category.getCategories);
 
